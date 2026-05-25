@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Premium Red Neon Accents from Sophisticated Dark theme */
+  --color-neon-red: #dc2626;
+  --color-neon-glow: rgba(220, 38, 38, 0.5);
+}
+
+/* Base style resets */
+html, body {
+  background-color: #050505;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sophisticated Dark Theme specific classes to reuse in general components */
+.sophisticated-border {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.sophisticated-border-light {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.sophisticated-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.sophisticated-card:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+/* Custom glow borders and shadows */
+.neon-glow-red {
+  box-shadow: 0 0 15px var(--color-neon-glow);
+}
+
+.neon-border-red {
+  border-color: var(--color-neon-red);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.25);
+}
+
+.text-neon-glow {
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+/* Custom Scrollbar for premium dark web applications */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-red);
+}
+
+/* Dynamic Animated Background particle pattern - simple high-performance pure CSS canvas alternative */
+.animated-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(10, 5, 5, 1) 0%, rgba(5, 5, 5, 1) 100%);
+  position: relative;
+}
+
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.01) 2px, transparent 2px);
+  background-size: 32px 32px, 64px 64px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes slow-pan-stadium {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 55% 45%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+.stadium-pan {
+  animation: slow-pan-stadium 20s infinite ease-in-out;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "ATV Sports",
+  "description": "Premium modern IPTV and live sports streaming experience. Watch live channels, explore trending broadcasts, search, and download our Android app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
